@@ -5,6 +5,6 @@
     },
     "user2": {
         "password": "password2",
-        "used": true
+        "used": false
     }
 }

@@ -9,9 +9,11 @@
 <body>
     <img id="question-image" src="{{ image_url }}" alt="Question Image"><br>
     <form action="/submit_answer" method="POST">
+        <input type="hidden" name="page_number" value="{{ page_number }}">
         <label for="answer">Answer:</label>
         <input type="text" id="answer" name="answer"><br>
         <button type="submit">Next</button>
     </form>
+    
 </body>
 </html>
