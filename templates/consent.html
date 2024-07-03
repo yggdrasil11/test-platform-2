@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Consent to Participate in the Assessment</h1>
+    <p>Welcome, and thank you for participating in our assessment. Please read the following information carefully before proceeding:</p>
+    <p>
+        <strong>Voluntary Participation:</strong> Your participation in this assessment is entirely voluntary. You may choose to withdraw at any time without any negative consequences.
+    </p>
+    <p>
+        <strong>Confidentiality:</strong> The information you provide during this assessment will be kept confidential. Your responses will be anonymized.
+    </p>
+    <p>
+        By clicking "I Consent" below, you acknowledge that you have read and understood the information provided and agree to participate in the assessment.
+    </p>
+    <form action="/consent" method="POST">
+        <button type="submit">I Consent</button>
+    </form>
+</body>
+</html>
+
+

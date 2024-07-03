@@ -98,3 +98,13 @@
 {"user": "user1", "page": 5, "timestamp": "2024-07-03T08:51:51.747483", "answer": ""}
 {"user": "user1", "page": 6, "timestamp": "2024-07-03T08:51:52.581541", "answer": ""}
 {"user": "user1", "page": 7, "timestamp": "2024-07-03T08:51:53.357296", "answer": ""}
+{"event": "User consented to participate in the assessment", "timestamp": "2024-07-03T09:35:23.274244"}
+{"event": "User user1 logged in", "timestamp": "2024-07-03T09:35:36.040208"}
+{"user": "user2", "event": "User logged in", "timestamp": "2024-07-03T09:39:56.558222"}
+{"user": "user2", "event": "User consented to participate in the assessment", "timestamp": "2024-07-03T09:40:21.221155"}
+{"user": "user2", "page": 1, "timestamp": "2024-07-03T09:40:25.507520", "answer": "A"}
+{"user": "user2", "page": 2, "timestamp": "2024-07-03T09:40:33.839055", "answer": "A"}
+{"user": "user2", "page": 3, "timestamp": "2024-07-03T09:40:49.180329", "answer": "2"}
+{"user": "user2", "page": 4, "timestamp": "2024-07-03T09:40:52.490990", "answer": ""}
+{"user": "user2", "page": 5, "timestamp": "2024-07-03T09:40:53.720449", "answer": ""}
+{"user": "user2", "page": 6, "timestamp": "2024-07-03T09:40:54.436446", "answer": ""}

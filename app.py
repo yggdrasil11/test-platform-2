@@ -18,6 +18,14 @@ def save_users(users):
 
 logs = []
 
+def log_event(user, event):
+    timestamp = datetime.now().isoformat()
+    log_entry = {'user': user, 'event': event, 'timestamp': timestamp}
+    logs.append(log_entry)
+    # Save log entry to a file
+    with open('logs.json', 'a') as f:
+        f.write(json.dumps(log_entry) + "\n")
+
 @app.route('/')
 def index():
     return render_template('login.html')
@@ -36,14 +44,30 @@ def login():
             save_users(users)
             session['username'] = username
             session['current_page'] = 1
-            return redirect(url_for('test_page', page_number=1))
+            log_event(username, 'User logged in')
+            return redirect(url_for('consent'))
     else:
         error = "Invalid credentials. Please try again."
         return render_template('login.html', error=error)
 
+@app.route('/consent', methods=['GET'])
+def consent():
+    if 'username' not in session:
+        return redirect(url_for('index'))
+    return render_template('consent.html')
+
+@app.route('/consent', methods=['POST'])
+def consent_post():
+    if 'username' not in session:
+        return redirect(url_for('index'))
+    username = session['username']
+    session['consented'] = True
+    log_event(username, 'User consented to participate in the assessment')
+    return redirect(url_for('test_page', page_number=1))
+
 @app.route('/test/<int:page_number>', methods=['GET'])
 def test_page(page_number):
-    if 'username' not in session:
+    if 'username' not in session or 'consented' not in session:
         return redirect(url_for('index'))
     if page_number > NUM_QUESTIONS:  # Use the variable here
         return redirect(url_for('thank_you'))
